@@ -1,78 +1,107 @@
 <div class="container-fluid">
- 
-  <div class="text-center mb-5" style="color:black">
-    <h1 style="display: inline;">CREATING CARS</h1> <button class="btn btn-success float-right ml-5"
-      style="position: absolute;right: 0;">Add Component</button>
-  </div>
+
+  <button class="btn btn-success float-right ml-5" style="position: absolute;right: 0;">Add Component</button>
+
 
 
   <div class="row">
     <div class="col-xl-4"></div>
     <div class="col-xl-4">
-      <div class="modal-body" id="myModal">
-        <form [formGroup]="profileForm" (ngSubmit)="addterm()">
-          <div class="form-group has-float-label">
-          
-            <input id="name" type="text" class="form-control" formControlName="name" [(ngModel)]="obj.name"
-              placeholder="Carname"
-              [ngClass]="{ 'is-invalid': sectionSubmitted && f.name.errors || f.name.invalid && (f.name.dirty || f.name.touched)}">
-              <label for="name">Carname</label>
-            <div *ngIf="sectionSubmitted && f.name.errors || f.name.invalid && (f.name.dirty || f.name.touched)"
-              class="invalid-feedback">
-              <div *ngIf="f.name.errors">Required</div>
-            </div>
-          </div>
+      <div class="card mt-5" style="width:400px;height:auto;">
+        <div class="modal-body" id="myModal">
 
-          <div class="form-group has-float-label">
-          <input id="modal" type="text" class="form-control" formControlName="modal" [(ngModel)]="obj.modal"
-              placeholder="Modalname"
-              [ngClass]="{ 'is-invalid': sectionSubmitted && f.modal.errors || f.modal.invalid && (f.modal.dirty || f.modal.touched)}">
-              <label for="name">Modalname</label>
-            <div *ngIf="sectionSubmitted && f.modal.errors || f.modal.invalid && (f.modal.dirty || f.modal.touched)"
-              class="invalid-feedback">
-              <div *ngIf="f.modal.errors">Required</div>
-            </div>
-          </div>
+          <div class="card-body">
+            <h4 class="card-title text-center">CAR REGISTRATION</h4>
+            <form [formGroup]="profileForm" (ngSubmit)="addterm()">
+              <div class="form-group has-float-label">
 
-          <div class="form-group has-float-label">
-           <input id="price" type="text" class="form-control" formControlName="price" [(ngModel)]="obj.price"
-              placeholder="Price"
-              [ngClass]="{ 'is-invalid': sectionSubmitted && f.price.errors || f.price.invalid && (f.price.dirty || f.price.touched)}">
-              <label for="name">Price</label>
-            <div *ngIf="sectionSubmitted && f.price.errors || f.price.invalid && (f.price.dirty || f.price.touched)"
-              class="invalid-feedback">
-              <div *ngIf="f.price.errors">Required</div>
-            </div>
-          </div>
+                <input id="name" type="text" class="form-control" formControlName="name" [(ngModel)]="obj.name"
+                  placeholder="Carname"
+                  [ngClass]="{ 'is-invalid': sectionSubmitted && f.name.errors || f.name.invalid && (f.name.dirty || f.name.touched)}">
+                <label for="name">Carname</label>
+                <div *ngIf="sectionSubmitted && f.name.errors || f.name.invalid && (f.name.dirty || f.name.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f.name.errors">Required</div>
+                </div>
+              </div>
 
-          <div class="form-group has-float-label">
-          <input id="color" type="text" class="form-control" formControlName="color" [(ngModel)]="obj.color"
-              placeholder="Color"
-              [ngClass]="{ 'is-invalid': sectionSubmitted && f.color.errors || f.color.invalid && (f.color.dirty || f.color.touched)}">
-              <label for="name">Color</label>
-            <div *ngIf="sectionSubmitted && f.color.errors || f.color.invalid && (f.color.dirty || f.color.touched)"
-              class="invalid-feedback">
-              <div *ngIf="f.color.errors">Required</div>
-            </div>
-          </div>
+              <div class="form-group has-float-label">
+                <input id="modal" type="text" class="form-control" formControlName="modal" [(ngModel)]="obj.modal"
+                  placeholder="Modalname"
+                  [ngClass]="{ 'is-invalid': sectionSubmitted && f.modal.errors || f.modal.invalid && (f.modal.dirty || f.modal.touched)}">
+                <label for="name">Modalname</label>
+                <div *ngIf="sectionSubmitted && f.modal.errors || f.modal.invalid && (f.modal.dirty || f.modal.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f.modal.errors">Required</div>
+                </div>
+              </div>
 
-          <div class="form-group has-float-label">
-          <input id="wheels" type="number" class="form-control" formControlName="wheels" [(ngModel)]="obj.wheels"
-              placeholder="Wheels"
-              [ngClass]="{ 'is-invalid': sectionSubmitted && f.wheels.errors || f.wheels.invalid && (f.wheels.dirty || f.wheels.touched)}">
-              <label for="name">No.of.wheels</label>
-            <div *ngIf="sectionSubmitted && f.wheels.errors || f.wheels.invalid && (f.wheels.dirty || f.wheels.touched)"
-              class="invalid-feedback">
-              <div *ngIf="f.wheels.errors">Required</div>
-            </div>
-          </div>
+              <div class="form-group has-float-label">
+                <input id="price" type="text" class="form-control" formControlName="price" [(ngModel)]="obj.price"
+                  placeholder="Price"
+                  [ngClass]="{ 'is-invalid': sectionSubmitted && f.price.errors || f.price.invalid && (f.price.dirty || f.price.touched)}">
+                <label for="name">Price</label>
+                <div *ngIf="sectionSubmitted && f.price.errors || f.price.invalid && (f.price.dirty || f.price.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f.price.errors">Required</div>
+                </div>
+              </div>
 
-          <div class="text-right mt-2">
-            <button type="submit" class="btn btn-sm btn-primary mb-2">Submit</button>
+              <div class="form-group has-float-label">
+                <input id="color" type="text" class="form-control" formControlName="color" [(ngModel)]="obj.color"
+                  placeholder="Color"
+                  [ngClass]="{ 'is-invalid': sectionSubmitted && f.color.errors || f.color.invalid && (f.color.dirty || f.color.touched)}">
+                <label for="name">Color</label>
+                <div *ngIf="sectionSubmitted && f.color.errors || f.color.invalid && (f.color.dirty || f.color.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f.color.errors">Required</div>
+                </div>
+              </div>
+
+              <div class="form-group has-float-label">
+                <input id="wheels" type="number" class="form-control" formControlName="wheels" [(ngModel)]="obj.wheels"
+                  placeholder="Wheels"
+                  [ngClass]="{ 'is-invalid': sectionSubmitted && f.wheels.errors || f.wheels.invalid && (f.wheels.dirty || f.wheels.touched)}">
+                <label for="name">No.of.wheels</label>
+                <div
+                  *ngIf="sectionSubmitted && f.wheels.errors || f.wheels.invalid && (f.wheels.dirty || f.wheels.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f.wheels.errors">Required</div>
+                </div>
+              </div>
+
+              <div class="text-right mt-2">
+                <button type="submit" class="btn btn-sm btn-primary mb-2">Submit</button>
+              </div>
+            </form>
+
           </div>
-        </form>
+        </div>
       </div>
-     
+
     </div>
   </div>
+</div>
+<div class="container mt-5">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Carname</th>
+        <th>Modalname</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>No.of.wheels</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of arr">
+        <td>{{item.name}}</td>
+        <td>{{item.modal}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.color}}</td>
+        <td>{{item.wheels}}</td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>
